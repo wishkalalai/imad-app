@@ -1,6 +1,6 @@
 console.log('Loaded!');
 var element = document.getElementByID ("main-text");
-element.innerHTML='Kalai here!!!';
+element.innerHTML="Kalai here!!!";
 
 var img = document.getElementByID ("madi");
 img.onclick = function () {
