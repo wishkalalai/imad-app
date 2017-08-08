@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
+var articles = {
+    article-one: {
     title: 'Article One | Kalai Balamurugan',
     heading: 'Article One',
     date: 'August 8, 2017',
@@ -19,6 +20,37 @@ var articleOne={
             <p>
               Hurray!!! This is Kalai's first article!!! Hurray!!! This is Kalai's first article!!! Hurray!!! This is Kalai's first article!!!
             </p>`
+},
+    article-two: {
+    title: 'Article Two | Kalai Balamurugan',
+    heading: 'Article two',
+    date: 'August 8, 2017',
+    content: `
+            <p>
+              Hurray!!! This is Kalai's second article!!! Hurray!!! This is Kalai's second article!!! Hurray!!! This is Kalai's second article!!!
+            </p>
+            <p>
+              Hurray!!! This is Kalai's second article!!! Hurray!!! This is Kalai's second article!!! Hurray!!! This is Kalai's second article!!
+            </p>
+            <p>
+              Hurray!!! This is Kalai's second article!!! Hurray!!! This is Kalai's second article!!! Hurray!!! This is Kalai's second article!!!
+            </p>`
+},
+    article-three: {
+    title: 'Article Three | Kalai Balamurugan',
+    heading: 'Article Three',
+    date: 'August 8, 2017',
+    content: `
+            <p>
+              Hurray!!! This is Kalai's third article!!! Hurray!!! This is Kalai's third article!!! Hurray!!! This is Kalai's third article!!!
+            </p>
+            <p>
+              Hurray!!! This is Kalai's third article!!! Hurray!!! This is Kalai's third article!!! Hurray!!! This is Kalai's third article!!
+            </p>
+            <p>
+              Hurray!!! This is Kalai's third article!!! Hurray!!! This is Kalai's third article!!! Hurray!!! This is Kalai's third article!!!
+            </p>`
+}
 };
 
 function createTemplate (data){
