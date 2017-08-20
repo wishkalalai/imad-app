@@ -114,8 +114,8 @@ app.get('/test-db', function (req, res) {
         } else {
             res.status(JSON.stringify(result));
         }
-    }
-        ));
+    });
+    });
 }
 
 var counter = 0;
