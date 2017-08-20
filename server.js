@@ -12,21 +12,10 @@ var config = {
     password: process.env.DB_PASSWORD
 };
 
-var Pool = new Pool(config);
-app.get('/test-db', function (req, res) {
-    //
-    //
-    Pool.query("SELECT * FROM test_kalai", function(err, result){
-        if (err) {
-            res.status(500).send(err.toString());
-        } else {
-            res.status(JSON.stringify(result));
-        }
-    });
-    });
-
 var app = express();
 app.use(morgan('combined'));
+
+
 
 var articles = {
     'article-one': {
@@ -115,7 +104,16 @@ app.get('/', function (req, res) {
 });
 
 
-
+var pool = new Pool(config);
+app.get('/test-db', function (req, res) {
+    pool.query("SELECT * FROM test_kalai", function(err, result){
+        if (err) {
+            res.status(500).send(err.toString());
+        } else {
+            res.status(JSON.stringify(result));
+        }
+    });
+    });
 
 
 var counter = 0;
