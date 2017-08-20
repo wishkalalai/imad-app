@@ -12,6 +12,8 @@ var config = {
     password: process.env.DB_PASSWORD;
 }
 
+
+
 var app = express();
 app.use(morgan('combined'));
 
@@ -101,9 +103,19 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
+var Pool = new Pool(config);
 app.get('/test-db', function (req, res) {
     //
     //
+    Pool.query("SELECT * FROM test_kalai", function(err, result){
+        if (err) {
+            res.status(500).send(err.toString());
+        } else {
+            res.status(JSON.stringify(result));
+        }
+    }
+        ));
 }
 
 var counter = 0;
